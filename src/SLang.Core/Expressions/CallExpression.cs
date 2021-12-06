@@ -1,6 +1,6 @@
 ﻿using System.Collections.Immutable;
 
-namespace SLang.Parser.Expressions;
+namespace SLang.Core.Expressions;
 
 public class CallExpression : IExpression
 {

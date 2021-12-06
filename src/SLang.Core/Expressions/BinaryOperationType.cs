@@ -1,4 +1,4 @@
-﻿namespace SLang.Parser.Expressions;
+﻿namespace SLang.Core.Expressions;
 
 public enum BinaryOperationType
 {

@@ -1,13 +1,15 @@
 ﻿using System.Collections.Immutable;
 using Pidgin;
 using Pidgin.Expression;
-using SLang.Parser.Expressions;
+using SLang.Core;
+using SLang.Core.Abstractions;
+using SLang.Core.Expressions;
 using static Pidgin.Parser;
 using static Pidgin.Parser<char>;
 
 namespace SLang.Parser;
 
-public class Parser
+public class Parser : IParser
 {
     private static Parser<char, T> Tok<T>(Parser<char, T> token)
             => Try(token).Before(SkipWhitespaces);
@@ -72,4 +74,9 @@ public class Parser
 
     public static IExpression ParseOrThrow(string input)
         => Expr.ParseOrThrow(input);
+
+    public CompilationUnit Parse(string input)
+    {
+        return new CompilationUnit(ParseOrThrow(input));
+    }
 }

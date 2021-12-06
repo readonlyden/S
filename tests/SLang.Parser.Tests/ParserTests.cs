@@ -1,5 +1,4 @@
-using SLang.Parser.Expressions;
-using SLang.Parser;
+using SLang.Core.Expressions;
 using Xunit;
 
 namespace SLang.Parser.Tests;
